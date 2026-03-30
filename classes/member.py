@@ -12,14 +12,18 @@ class Member:
 
     def get_borrow_limit(self):
         # TODO 1: Return the default borrow limit for a base member.
+        return 2
         pass
 
     def get_due_days(self):
         # TODO 2: Return the default checkout length in days.
+        return 14
         pass
 
     def can_borrow(self):
         # TODO 3: Return True when borrowed books is below the borrow limit.
+        if len._borrowed_books < len.get_borrow_limit:
+            return True
         pass
 
     def borrow_book(self, isbn):
@@ -49,10 +53,12 @@ class StudentMember(Member):
 
     def get_borrow_limit(self):
         # TODO 7: Students can borrow up to 2 books.
+        return 2
         pass
 
     def get_due_days(self):
         # TODO 8: Students keep books for 14 days.
+        return 14
         pass
 
 
@@ -62,8 +68,10 @@ class FacultyMember(Member):
 
     def get_borrow_limit(self):
         # TODO 9: Faculty can borrow up to 5 books.
+        return 5
         pass
 
     def get_due_days(self):
         # TODO 10: Faculty keep books for 28 days.
+        return 28
         pass
