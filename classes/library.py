@@ -17,20 +17,44 @@ class Library:
         self.load_data()
 
     def add_book(self, title, author, isbn):
-        # TODO 1: Reject duplicate ISBNs, add a Book, save data, return a message.
+        # TODO 1: Reject duplicate ISBNs,  
+        for book in self.books:
+            if book.isbn == isbn:
+                return ("Error, this is a duplicate")
+            
+        # add a Book,
+        new_book = Book(title, author, isbn)
+        self._books.append(new_book)
+
+        #save data, return a message.
+        self.save_data()
+        print ("Book has been added successfully")
+            
         pass
 
     def add_member(self, member_type, member_id, name):
         # TODO 2: Reject duplicate member IDs.
         # Build either StudentMember or FacultyMember, save data, and return a message.
+        for member_id in self.member_id:
+            if member_id == member_id:
+                return ("cannot have duplicate member ids")
+        
         pass
 
     def find_book(self, isbn):
         # TODO 3: Return the matching Book object or None.
+        for book in self._books:
+            if self.isbn == isbn:
+                return {self.book}
+            else:
+                return ("book not found")
         pass
 
     def find_member(self, member_id):
         # TODO 4: Return the matching member object or None.
+        for member in self._members:
+            if self.member_id == member_id:
+                return {member object?}
         pass
 
     def view_books(self):
